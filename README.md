@@ -15,9 +15,44 @@ The AT&T face dataset contains a set of grayscale face images with dimensions 92
 
 
 
-### Tasks
-1. Load dataset and divide the date into training and test sets. 
-2. Implement the PCA algorithm from scratch.
-3. Implement image reconstruction using the eigen projections and visualise differences for different number of components.
-4. Visualise the mean(Eigen face) generated.
-5. Given training set, obtain accuracy by attempting a face regonition module and obtaining the accuracy for different number of principal components.
+## PCA for Facial Recognition
+
+Facial recognition systems often utilize Principal Component Analysis (PCA) as a dimensionality reduction technique, extracting eigenfaces to capture essential facial features. This process simplifies the recognition task by reducing data dimensionality.
+
+## Steps for PCA in Facial Recognition:
+
+### 1. Data Collection and Preprocessing
+- Gather a dataset of face images.
+- Preprocess images to enhance quality and uniformity.
+
+### 2. Computing the Covariance Matrix
+- Calculate the covariance matrix of preprocessed face images.
+
+### 3. Obtaining Eigenvectors and Eigenvalues
+- Derive eigenvectors and eigenvalues from the covariance matrix.
+
+### 4. Selecting Principal Components (Eigenfaces)
+- Choose eigenfaces corresponding to significant eigenvalues.
+
+### 5. Reducing Dimensionality and Projecting Face Images
+- Project original face images onto the eigenface basis to reduce dimensionality.
+
+### 6. Comparing and Evaluating Recognition Accuracies
+- Use reduced-dimensional representations for facial recognition.
+- Compare and evaluate system recognition accuracies.
+
+
+## Results
+
+In the PCA process, a notable observation emerges regarding the relationship between the number of components (eigenfaces) and the clarity of reconstructed faces. Increasing the components enhances eigenface clarity, making them more visually recognizable. Conversely, fewer components result in more abstract and less defined eigenfaces, emphasizing the need for an optimal component count.
+
+Furthermore, facial recognition algorithm accuracy improves with more components. Increased eigenfaces enable capturing intricate facial details, enhancing discrimination and recognition. Striking a balance between component count and computational complexity is crucial, considering higher components may demand more computational resources.
+
+Refer to the provided Jupyter Notebook for a visual comparison of reconstructed faces and recognition accuracies at different component counts, offering insights into the impact on eigenface clarity and overall recognition system accuracy.
+
+Result sample on diff-diff compoment
+
+![Results](./docs/images/result2.png)
+
+
+![Results](./docs/images/result.png)
